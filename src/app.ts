@@ -2,7 +2,7 @@ import express, { Application, Request, Response } from "express";
 const app: Application = express();
 import cors from "cors";
 import { routes } from "./app/routes";
-import globalErrorHandler from "./app/middlewares/globalErroHandler";
+import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
