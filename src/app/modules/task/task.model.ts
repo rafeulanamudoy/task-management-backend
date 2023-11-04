@@ -1,7 +1,5 @@
 import { Schema, model } from "mongoose";
 
-import bcrypt from "bcrypt";
-import config from "../../../config";
 import { ITask } from "./task.interface";
 import { TaskStatus } from "./task.constant";
 
@@ -20,6 +18,11 @@ const taskSchema = new Schema<ITask>(
       required: true,
       default: "pending",
       enum: TaskStatus,
+    },
+    userEmail: {
+      type: String,
+
+      required: true,
     },
   },
   {

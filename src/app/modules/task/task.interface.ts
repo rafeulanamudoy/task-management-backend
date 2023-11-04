@@ -4,4 +4,5 @@ export type ITask = {
   title: string;
   description: string;
   status: ITaskStatus;
+  userEmail: string;
 };
