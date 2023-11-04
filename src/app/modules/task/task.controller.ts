@@ -17,7 +17,22 @@ const createTask = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const getTask = catchAsync(async (req: Request, res: Response) => {
+  const email = req.params.email;
+  console.log(email);
+
+  const result = await TaskService.getTask(email);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+
+    message: "Task get successfully",
+    data: result,
+  });
+});
 
 export const TaskController = {
   createTask,
+  getTask,
 };

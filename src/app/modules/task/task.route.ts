@@ -11,3 +11,4 @@ router.post(
   validateRequest(TaskValidation.createTaskSchema),
   TaskController.createTask
 );
+router.get("/:email", TaskController.getTask);
