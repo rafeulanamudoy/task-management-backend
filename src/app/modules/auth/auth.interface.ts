@@ -15,6 +15,19 @@ export type IUserExistReturn = {
 
   password: string;
 };
+export type ILoginUser = {
+  email: string;
+  password: string;
+};
+export type ILoginUserResponse = {
+  refreshToken?: string;
+  accessToken: string;
+  email: string;
+};
+export type IRefreshTokenResponse = {
+  accessToken: string;
+};
+
 export type UserModel = {
   isUserExist(
     email: string
