@@ -3,6 +3,7 @@ import catchAsync from "../../../shared/catchAsync";
 import sendResponse from "../../../shared/sendResponse";
 import { TaskService } from "./task.service";
 import { Request, Response } from "express";
+import { IpaginationOptions } from "../../../interface/pagination";
 
 const createTask = catchAsync(async (req: Request, res: Response) => {
   const task = req.body;
@@ -20,8 +21,11 @@ const createTask = catchAsync(async (req: Request, res: Response) => {
 const getTask = catchAsync(async (req: Request, res: Response) => {
   const email = req.params.email;
   console.log(email);
+  const query = req.query;
 
-  const result = await TaskService.getTask(email);
+  console.log(query, "i am from controller");
+
+  const result = await TaskService.getTask(email, query);
 
   sendResponse(res, {
     success: true,
