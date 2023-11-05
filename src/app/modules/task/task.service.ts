@@ -38,7 +38,7 @@ const getTask = async (
 
   console.log(condition, "i am from service");
 
-  const userTask = await Task.find({
+  const result = await Task.find({
     $and: [{ userEmail: email }, condition],
   })
     .sort(sortCondition)
@@ -50,7 +50,7 @@ const getTask = async (
       page,
       limit,
     },
-    data: userTask,
+    data: result,
   };
 };
 const updateSingleTask = async (
@@ -62,8 +62,14 @@ const updateSingleTask = async (
   });
   return result;
 };
+const deleteSingleTask = async (id: string): Promise<ITask | null> => {
+  const result = await Task.findByIdAndDelete(id);
+  return result;
+};
+
 export const TaskService = {
   createTask,
   getTask,
   updateSingleTask,
+  deleteSingleTask,
 };

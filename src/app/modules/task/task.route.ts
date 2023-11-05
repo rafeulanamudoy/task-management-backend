@@ -13,3 +13,4 @@ router.post(
 );
 router.get("/:email", TaskController.getTask);
 router.patch("/:id", TaskController.updateSingleTask);
+router.delete("/:id", TaskController.deleteSingleTask);
