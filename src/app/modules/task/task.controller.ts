@@ -35,8 +35,22 @@ const getTask = catchAsync(async (req: Request, res: Response) => {
     data: result,
   });
 });
+const updateSingleTask = catchAsync(async (req: Request, res: Response) => {
+  const updatedTask = req.body;
+  const id = req.params.id;
 
+  const result = await TaskService.updateSingleTask(id, updatedTask);
+
+  sendResponse(res, {
+    success: true,
+    statusCode: httpStatus.OK,
+
+    message: "Task updated successfully",
+    data: result,
+  });
+});
 export const TaskController = {
   createTask,
   getTask,
+  updateSingleTask,
 };

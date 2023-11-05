@@ -12,3 +12,4 @@ router.post(
   TaskController.createTask
 );
 router.get("/:email", TaskController.getTask);
+router.patch("/:id", TaskController.updateSingleTask);

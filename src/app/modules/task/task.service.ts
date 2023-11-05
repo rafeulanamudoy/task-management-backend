@@ -53,7 +53,17 @@ const getTask = async (
     data: userTask,
   };
 };
+const updateSingleTask = async (
+  id: string,
+  payload: Partial<ITask>
+): Promise<ITask | null> => {
+  const result = await Task.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  });
+  return result;
+};
 export const TaskService = {
   createTask,
   getTask,
+  updateSingleTask,
 };
