@@ -18,12 +18,12 @@
 
 # Prerequisites To run In local server
 
-### 1. must have Node.js and npm are installed on client's local machine
+#### 1. must have Node.js and npm are installed on client's local machine
 
-### 2. Clone the repository using this command in terminal "git clone < GitHub repository URL>"
+#### 2. Clone the repository using this command in terminal "git clone < GitHub repository URL>"
 
-### 3. After Clone the repository Navigate to the project's root directory and in command line Install the Dependencies using this command "npm install"
+#### 3. After Clone the repository Navigate to the project's root directory and in command line Install the Dependencies using this command "npm install"
 
-### 4. then use the following command to build the TypeScript code "npm run build"
+#### 4. then use the following command to build the TypeScript code "npm run build"
 
-### 5. c Then finally To start the Node.js Express server in command line put this command "npm start"
+#### 5. c Then finally To start the Node.js Express server in command line put this command "npm start"
