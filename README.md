@@ -1,4 +1,4 @@
-# Server Link:https://task-management-backend-eta.vercel.app/api/v1
+# Server Link:https://task-management-backend-eta.vercel.app
 
 # User Api EndPoint
 
@@ -10,7 +10,7 @@
 
 #### Create a New Task:https://task-management-backend-eta.vercel.app/api/v1/task/create-task (Post)
 
-#### Get All The Task :https://task-management-backend-eta.vercel.app/api/v1/task/:email(Get)
+#### Get All The Task :https://task-management-backend-eta.vercel.app/api/v1/task/:email (Get)
 
 #### Update a Single Task:https://task-management-backend-eta.vercel.app/api/v1/task/:id (Patch)
 
