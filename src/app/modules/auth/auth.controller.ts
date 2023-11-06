@@ -17,7 +17,7 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
       success: true,
       statusCode: httpStatus.OK,
 
-      message: "Users created successfully",
+      message: "User created successfully",
       data: others,
     });
   }
@@ -25,9 +25,7 @@ const createUser = catchAsync(async (req: Request, res: Response) => {
 const loginUser = catchAsync(async (req: Request, res: Response) => {
   const { ...loginData } = req.body;
   const result = await UserService.loginUser(loginData);
-  //console.log(result)
 
-  // set refresh token into cookie
   const cookieOptions = {
     secure: config.env === "production",
     httpOnly: true,

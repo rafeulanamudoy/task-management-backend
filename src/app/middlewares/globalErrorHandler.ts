@@ -29,15 +29,12 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
     statusCode = simplifiedError?.statusCode;
     message = simplifiedError?.message;
     errorMessages = simplifiedError?.errorMessages;
-
-    //console.log(err, 'i am from MongoError', err.message)
   } else if (err instanceof ZodError) {
     const simplifiedError = handleZodError(err);
     statusCode = simplifiedError.statusCode;
     message = simplifiedError.message;
     errorMessages = simplifiedError.errorMessages;
   } else if (err instanceof ApiError) {
-    console.log("hei i am from ApiError class error");
     statusCode = err.statusCode;
     message = err?.message;
     errorMessages = err?.message
@@ -49,8 +46,6 @@ const globalErrorHandler: ErrorRequestHandler = (err, req, res, next) => {
         ]
       : [];
   } else if (err instanceof Error) {
-    // console.log('hei i am from Error class error')
-
     message = err?.message;
 
     errorMessages = err?.message

@@ -21,10 +21,8 @@ const createTask = catchAsync(async (req: Request, res: Response) => {
 });
 const getTask = catchAsync(async (req: Request, res: Response) => {
   const email = req.params.email;
-  console.log(email);
-  const query = req.query;
 
-  console.log(query, "i am from controller");
+  const query = req.query;
 
   const result = await TaskService.getTask(email, query);
 

@@ -36,8 +36,6 @@ const getTask = async (
     sortCondition[sortBy] = sortOrder;
   }
 
-  console.log(condition, "i am from service");
-
   const result = await Task.find({
     $and: [{ userEmail: email }, condition],
   })

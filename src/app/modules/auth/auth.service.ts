@@ -7,9 +7,7 @@ import ApiError from "../../errors/handleApiError";
 import httpStatus from "http-status";
 
 const createUser = async (user: IUser): Promise<IUser | null> => {
-  // console.log(user)
-
-  const createUser = await User.create(user);
+  const createUser = (await User.create(user)).toObject();
   return createUser;
 };
 const loginUser = async (
